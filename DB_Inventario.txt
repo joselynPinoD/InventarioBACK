@@ -1,0 +1,72 @@
+ CREATE DATABASE DB_Inventario;
+
+USE DB_Inventario;
+
+CREATE TABLE usuario(rut VARCHAR(20) PRIMARY KEY,nombre VARCHAR(20),apellidos VARCHAR(50),
+cargo VARCHAR(20),email VARCHAR(50),
+contraseña VARCHAR(50));
+
+CREATE TABLE cargo(id INTEGER PRIMARY KEY,
+cargo VARCHAR(20));
+
+CREATE TABLE sucursal(id INTEGER PRIMARY KEY,
+nombre VARCHAR(50),
+direccion VARCHAR(50),
+comuna VARCHAR(50));
+
+CREATE TABLE producto(id INTEGER PRIMARY KEY,
+modelo VARCHAR(50),
+marca VARCHAR(50),
+color VARCHAR(50),
+categoria VARCHAR(30),
+valorProducto DOUBLE);
+
+CREATE TABLE marca(id INTEGER PRIMARY KEY,
+marca VARCHAR(50));
+
+CREATE TABLE precio(id INTEGER PRIMARY KEY,
+neto DOUBLE,
+fechaInicio DATE,
+fechaTermino DATE);
+
+CREATE TABLE categoria(id INTEGER PRIMARY KEY,
+categoria VARCHAR(30));
+
+
+//Datos tabla usuario
+
+/*Todas las contraseñas se componen del primer nombre, primer apellido, inicial del segundo apellido,
+4 últimos números del rut(antes del dígito verificador) y nombre del cargo abreviado)*/
+
+INSERT INTO usuario VALUES('18.765.465-8', 'Juan Pablo', 'Morales Rifo', 'Administrador', 'jp.morales_rifo@gmail.com', 'JuanMoralesR5465.admin');
+
+INSERT INTO usuario VALUES('18.684.746-7', 'Rene', 'Allende Allende', 'Vendedor', 'rene_allende.a@gmail.com', 'ReneAllendeA4746.vend');
+
+INSERT INTO usuario VALUES('19.070.984-9', 'Matías', 'Correa Varela', 'Vendedor', 'matt_correav@gmail.com', 'MatiasCorreaV0984.vend');
+
+INSERT INTO usuario VALUES('19.654.232-9', 'Joselyn', 'Pino Díaz', 'Vendedora', 'jo.pino.diaz@gmail.com', 'JoselynPinoD4232.vend');
+
+
+//Datos tabla producto
+
+INSERT INTO producto VALUES(0101, 'P30 Lite', 'Huawei', 'Peacock Blue', 'Celular', 249990, 20);
+
+INSERT INTO producto VALUES(0102, 'Y9 Prime 2019', 'Huawei', 'Verde', 'Celular', 249990, 40);
+
+INSERT INTO producto VALUES(0103, 'Galaxy S10+', 'Samsung', 'Blanco Prisma', 'Celular', 709990, 37);
+
+INSERT INTO producto VALUES(0104, 'Y9 2019', 'Huawei', 'Negro', 'Celular', 139990, 55);
+
+INSERT INTO producto VALUES(0105, 'Mate 20 Lite', 'Huawei', 'Dorado', 'Celular', 159990, 15);
+
+INSERT INTO producto VALUES(0106, 'P20 Lite', 'Huawei', 'Rosado', 'Celular', 129990, 43);
+
+INSERT INTO producto VALUES(0107, 'G7 Fit', 'LG', 'Negro', 'Celular', 179990, 25);
+
+INSERT INTO producto VALUES(0108, 'Galaxy A7', 'Samsung', 'Negro-Dorado', 'Celular', 329990, 10);
+
+INSERT INTO producto VALUES(0109, 'Moto E5', 'Motorola', 'Negro', 'Celular', 69990, 20);
+
+INSERT INTO producto VALUES(0110, 'Y9 2019', 'Huawei', 'Negro', 'Celular', 139990, 46);
+
+
